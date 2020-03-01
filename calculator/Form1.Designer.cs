@@ -270,9 +270,7 @@
             this.lblDisplay.Name = "lblDisplay";
             this.lblDisplay.Size = new System.Drawing.Size(19, 21);
             this.lblDisplay.TabIndex = 21;
-            this.lblDisplay.Text = "0";
             this.lblDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblDisplay.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.lblDisplay_PreviewKeyDown);
             // 
             // Form1
             // 

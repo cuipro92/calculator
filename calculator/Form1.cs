@@ -28,8 +28,16 @@ namespace calculator
             str = "";
         }
 
-        public void Display()
+        public void DisplayLabelAndTextBox(string text)
         {
+            str = str + text;
+            lblDisplay.Text = str;
+            temp = temp + text;
+        }
+
+        public void DisplayLabel(string text)
+        {
+            str = str + text;
             lblDisplay.Text = str;
         }
 
@@ -44,93 +52,69 @@ namespace calculator
         {
             if(str!="0")
             {
-                str = str + "0";
-                temp = temp + "0";
-                Display();
+                DisplayLabelAndTextBox("0");
             }
         }
 
         private void btn1_Click(object sender, EventArgs e)
         {
-            str = str + "1";
-            temp = temp + "1";
-            Display();
+            DisplayLabelAndTextBox("1");
         }
 
         private void btn2_Click(object sender, EventArgs e)
         {
-            str = str + "2";
-            temp = temp + "2";
-            Display();
+            DisplayLabelAndTextBox("2");
         }
 
         private void btn3_Click(object sender, EventArgs e)
         {
-            str = str + "3";
-            temp = temp + "3";
-            Display();
+            DisplayLabelAndTextBox("3");
         }
 
         private void btn4_Click(object sender, EventArgs e)
         {
-            str = str + "4";
-            temp = temp + "4";
-            Display();
+            DisplayLabelAndTextBox("4");
         }
 
         private void btn5_Click(object sender, EventArgs e)
         {
-            str = str + "5";
-            temp = temp + "5";
-            Display();
+            DisplayLabelAndTextBox("5");
         }
 
         private void btn6_Click(object sender, EventArgs e)
         {
-            str = str + "6";
-            temp = temp + "6";
-            Display();
+            DisplayLabelAndTextBox("6");
         }
 
         private void btn7_Click(object sender, EventArgs e)
         {
-            str = str + "7";
-            temp = temp + "7";
-            Display();
+            DisplayLabelAndTextBox("7");
         }
 
         private void btn8_Click(object sender, EventArgs e)
         {
-            str = str + "8";
-            temp = temp + "8";
-            Display();
+            DisplayLabelAndTextBox("8");
         }
 
         private void btn9_Click(object sender, EventArgs e)
         {
-            str = str + "9";
-            temp = temp + "9";
-            Display();
+            DisplayLabelAndTextBox("9");
         }
 
         private void btnDot_Click(object sender, EventArgs e)
         {
             if (!temp.Contains("."))
             {
-                str = str + ".";
-                temp = temp + ".";
-                Display();
-            }
-            
+                DisplayLabelAndTextBox(".");
+            }  
         }
 
         private void btnSum_Click(object sender, EventArgs e)
         {
             if (str != "")
             {
-                str = str + "+";
+                DisplayLabel("+");
                 temp = "";
-                Display();
             }
         }
 
@@ -138,9 +122,8 @@ namespace calculator
         {
             if (str != "")
             {
-                str = str + "-";
-                temp = ""; 
-                Display();
+                DisplayLabel("-");
+                temp = "";
             }
         }
 
@@ -148,9 +131,8 @@ namespace calculator
         {
             if (str != "")
             {
-                str = str + "×";
+                DisplayLabel("×");
                 temp = "";
-                Display();
             }
         }
 
@@ -158,9 +140,8 @@ namespace calculator
         {
             if (str != "")
             {
-                str = str + "÷";
+                DisplayLabel("÷");
                 temp = "";
-                Display();
             }
         }
 
@@ -168,9 +149,8 @@ namespace calculator
         {
             if (str != "")
             {
-                str = str + "%";
+                DisplayLabel("%");
                 temp = "";
-                Display();
             }
         }
         //public double Calculation()
@@ -215,25 +195,17 @@ namespace calculator
             catch
             {
                 lblDisplay.Text = disp + " operation fail !!!";
-            }
-            
+            } 
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
-            str = str + "(";
-            Display();
+            DisplayLabel("(");
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            str = str + ")";
-            Display();
-        }
-
-        private void lblDisplay_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        {
-
+            DisplayLabel(")");
         }
     }
 }
